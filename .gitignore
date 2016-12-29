@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+*.Rproj
+.DS_Store
+.gitignore.sb-ee55d011-mCh3CG
+shinyaudio.Rproj
