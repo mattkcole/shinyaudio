@@ -13,6 +13,26 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-audio <- function() {
-  print("Hello, world!")
+library(shiny)
+
+
+audio <- function(src, type = " 'audio/mp3'", autoplay = F, controls = T){
+
+        autoplay <- ifelse(autoplay == T, " autoplay", "")
+        controls <- ifelse(controls == T, " controls", "")
+        src <- paste("src='", src, "'", sep = "")
+
+        return(HTML('<audio ',
+        src,
+        " type =", type,
+        autoplay,
+        controls,
+
+              "></audio>", sep = ""))
 }
+
+audio('test.mp3')
+
+<audio src="test.mp3" type="audio/mp3" autoplay controls></audio>
+
+HTML('<audio></audio>')
