@@ -1,21 +1,23 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
 #   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
 #   Build and Reload Package:  'Cmd + Shift + B'
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-library(shiny)
-
-
+#' Add audio elements to a Shiny app
+#'
+#' Creates an audio element inside of a Shiny application
+#'
+#' @param src source of audio file
+#' @param type audio file extension. ie. 'audio/mp3'
+#' @param autoplay Should the file play automatically?
+#' @param controls Should the user control playback?
+#'
+#' @return None
+#'
+#' @examples
+#' audio()
+#'
+#' @export
 audio <- function(src, type = " 'audio/mp3'", autoplay = F, controls = T){
 
         autoplay <- ifelse(autoplay == T, " autoplay", "")
@@ -30,9 +32,3 @@ audio <- function(src, type = " 'audio/mp3'", autoplay = F, controls = T){
 
               "></audio>", sep = ""))
 }
-
-audio('test.mp3')
-
-<audio src="test.mp3" type="audio/mp3" autoplay controls></audio>
-
-HTML('<audio></audio>')
